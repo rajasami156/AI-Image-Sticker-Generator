@@ -1,0 +1,15 @@
+diffusers 
+transformers 
+accelerate
+huggingface_hub
+pillow
+fastapi
+pydantic 
+ngrok 
+uvicorn
+celery 
+redis
+sentencepiece
+tokenizers
+opencv-python
+python-multipart
