@@ -5,7 +5,7 @@ Welcome to the Image Sticker Generator API! This service is designed to transfor
 ## Examples 
 
 ![Example1](output/sticker_check3.png)
-![Example2](output/sticker_check3.png)
+![Example2](output/sticker_check.png)
 ![Example3](output/sticker_check5.png)
 
 
