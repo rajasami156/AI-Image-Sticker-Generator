@@ -22,32 +22,22 @@
 # CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 
 
-
-# Start with a base image that has Python
+# Use a base image with Python
 FROM python:3.11-slim
 
-# Set up environment variables
+# Set environment variables
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1
 
-# Install Supervisor
-RUN apt-get update && apt-get install -y supervisor
-
-# Set the working directory in the container
+# Set working directory
 WORKDIR /app
 
-# Copy requirements file and install dependencies
+# Install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the application files
+# Copy application files
 COPY . .
 
-# Expose the port FastAPI will run on
+# Expose port for FastAPI
 EXPOSE 8000
-
-# Add Supervisor config file to Docker container
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-
-# Start Supervisor as the entry point
-CMD ["/usr/bin/supervisord"]
