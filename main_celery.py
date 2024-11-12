@@ -131,11 +131,13 @@ from io import BytesIO
 app = FastAPI()
 
 # Celery app setup with Redis as the broker
+
 celery_app = Celery(
     "tasks",
-    broker="redis://localhost:6379/0",  # Redis URL
-    backend="redis://localhost:6379/0",  # Redis as backend for result storage
+    broker="redis://redis:6379/0",  # Use 'redis' as the hostname
+    backend="redis://redis:6379/0",
 )
+
 
 # Load model and processor (only once for the worker)
 preprocessor = AutoImageProcessor.from_pretrained("google/deeplabv3_mobilenet_v2_1.0_513")
