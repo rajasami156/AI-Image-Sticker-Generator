@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: sticker-generator-web
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port 8000"
+
+  - type: worker
+    name: sticker-generator-worker
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "celery -A celery_worker.celery_app worker --loglevel=info"
+
+  - type: redis
+    name: sticker-generator-redis
+    plan: free
