@@ -3,15 +3,15 @@ version: '3.8'
 services:
   fastapi:
     build: .
-    command: uvicorn main_celery:app --host 0.0.0.0 --port 8000 --reload
+    command: uvicorn main_celery:app --host 0.0.0.0 --port 7000 --reload
     volumes:
       - .:/app
     ports:
-      - "8000:8000"
+      - "7000:7000"
     depends_on:
       - redis
     environment:
-      - BROKER_URL=redis://red-csqomplumphs73d5oh7g:6379
+      - BROKER_URL=redis://red-csqt4bd2ng1s73bptkkg:6379
 
   celery:
     build: .
@@ -22,7 +22,7 @@ services:
     depends_on:
       - redis
     environment:
-      - BROKER_URL=redis://red-csqomplumphs73d5oh7g:6379
+      - BROKER_URL=redis://red-csqt4bd2ng1s73bptkkg:6379
 
   redis:
     image: redis:alpine

@@ -39,8 +39,8 @@ app.add_middleware(
 
 celery_app = Celery(
     "tasks",
-    broker="redis://red-csqomplumphs73d5oh7g:6379",  # Use 'redis' as the hostname
-    backend="redis://red-csqomplumphs73d5oh7g:6379",
+    broker="redis://red-csqt4bd2ng1s73bptkkg:6379",  # Use 'redis' as the hostname
+    backend="redis://red-csqt4bd2ng1s73bptkkg:6379",
 )
 
 
