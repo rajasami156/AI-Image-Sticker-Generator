@@ -13,3 +13,4 @@ sentencepiece
 tokenizers
 opencv-python
 python-multipart
+fastapi-cors
