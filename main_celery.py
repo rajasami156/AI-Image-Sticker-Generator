@@ -134,8 +134,8 @@ app = FastAPI()
 
 celery_app = Celery(
     "tasks",
-    broker="redis://redis:6379/0",  # Use 'redis' as the hostname
-    backend="redis://redis:6379/0",
+    broker="redis://red-csqomplumphs73d5oh7g:6379",  # Use 'redis' as the hostname
+    backend="redis://red-csqomplumphs73d5oh7g:6379",
 )
 
 
