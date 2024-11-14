@@ -11,7 +11,7 @@ services:
     depends_on:
       - redis
     environment:
-      - BROKER_URL=redis://redis:6379/0
+      - BROKER_URL=redis://red-csqomplumphs73d5oh7g:6379
 
   celery:
     build: .
